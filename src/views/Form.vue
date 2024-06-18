@@ -20,17 +20,17 @@ export default {
         !namePattern.test(this.firstname) ||
         !namePattern.test(this.lastname)
       ) {
-        alert("Nom et prénom doivent contenir uniquement des lettres.");
+        alert("Name and fisrt name must only have letters.");
         return;
       }
 
       if (!phonePattern.test(this.phone)) {
-        alert("Téléphone doit contenir 10 chiffres.");
+        alert("Phone number must have 10 digits.");
         return;
       }
 
       if (!zipcodePattern.test(this.zipcode)) {
-        alert("Code postal doit contenir 5 chiffres.");
+        alert("Zip Code contains 5 digits.");
         return;
       }
 
@@ -41,15 +41,15 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-5">
-    <h2>Étape 1 : Informations personnelles</h2>
-    <form>
+  <div>
+    <h2>Step 1 : Personal datas</h2>
+    <form @submit.prevent="nextStep">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Prénom :</label>
+        <label for="exampleInputEmail1" class="form-label">First Name :</label>
         <input class="form-control" type="text" v-model="firstname" required />
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Prénom :</label>
+        <label for="exampleInputEmail1" class="form-label">Last name :</label>
         <input class="form-control" type="text" v-model="lastname" required />
       </div>
       <div class="mb-3">
@@ -57,15 +57,15 @@ export default {
         <input class="form-control" type="email" v-model="email" required />
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Téléphone :</label>
+        <label for="exampleInputEmail1" class="form-label">Phone :</label>
         <input class="form-control" type="tel" v-model="phone" required />
       </div>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Code postal :</label>
+        <label for="exampleInputEmail1" class="form-label">ZIP Code :</label>
         <input class="form-control" type="number" v-model="zipcode" required />
       </div>
 
-      <button type="submit" class="btn btn-primary">Suivant</button>
+      <button type="submit" class="btn btn-primary">Next</button>
     </form>
   </div>
 </template>
