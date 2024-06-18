@@ -1,9 +1,9 @@
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
+<script setup></script>
 
 <template>
-  <RouterView> </RouterView>
+  <div class="container mt-5">
+    <RouterView></RouterView>
+  </div>
 </template>
 
 <style scoped></style>
